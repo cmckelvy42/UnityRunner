@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         sfx = GetComponent<AudioSource>();
-        Physics.gravity *= gravityMod;
+        Physics.gravity = new Vector3(0, -9.8f * 5, 0);
     }
 
     // Update is called once per frame
