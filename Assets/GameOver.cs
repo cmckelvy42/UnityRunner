@@ -5,10 +5,15 @@ using TMPro;
 
 public class GameOver : MonoBehaviour
 {
+    private TextMeshPro text;
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<TextMeshPro>().transform.position = new Vector3(100, 100, 100);
+        text = gameObject.GetComponent<TextMeshPro>();
+        text.transform.position = new Vector3(100, 100, 100);
+#if UNITY_WEBGL
+        text.text = "Game Over\n<size=30%>Press Space to restart</size>";
+#endif
     }
 
     // Update is called once per frame
